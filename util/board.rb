@@ -29,9 +29,13 @@ class Board
     @data[x + y * width] = value
   end
 
+  def in_bounds?(x, y)
+    xs.include?(x) && ys.include?(y)
+  end
+
   def each
-    xs.each do |x|
-      ys.each do |y|
+    ys.each do |y|
+      xs.each do |x|
         yield x, y
       end
     end
