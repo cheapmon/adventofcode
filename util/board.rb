@@ -16,7 +16,11 @@ class Board
   end
 
   def self.read(pathname)
-    lines = File.read(pathname).strip.lines.map(&:strip)
+    read_string(File.read(pathname))
+  end
+
+  def self.read_string(string)
+    lines = string.strip.lines.map(&:strip)
 
     new(lines.first.size, lines.size) { |x, y| lines[y][x] }
   end
