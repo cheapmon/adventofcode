@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+bundle exec ruby advent_of_code.rb "$@"
