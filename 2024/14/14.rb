@@ -15,8 +15,8 @@ initial_robots = File.read("14.txt")
   .freeze
 robots = initial_robots.map(&:clone)
 
-width = 101 # 11
-height = 103 # 7
+width = demo? ? 11 : 101
+height = demo? ? 7 : 103
 
 100.times do
   robots.each { |robot| robot.tick(width, height) }
