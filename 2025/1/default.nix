@@ -12,7 +12,7 @@ let
     zeros = 0;
     list = [n];
   };
-  input = builtins.readFile ./1.txt;
+  input = builtins.readFile ./input.txt;
   lines = lib.strings.splitString "\n" input;
 
   # "L99" -> 99
