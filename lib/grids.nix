@@ -5,8 +5,8 @@ in rec {
   genGrid = generator: width: height: let
     len = width * height;
     gen = index: let
-      x = maths.mod index height;
-      y = index / height;
+      x = maths.mod index width;
+      y = index / width;
     in
       generator x y;
   in {
@@ -18,7 +18,7 @@ in rec {
   ys = grid: lib.range 0 (grid.height - 1);
 
   elemAt = grid: x: y: let
-    index = grid.height * y + x;
+    index = grid.width * y + x;
   in
     lib.elemAt grid.list index;
 
@@ -29,8 +29,8 @@ in rec {
 
   imap0 = f: grid: let
     imap0' = i: v: let
-      x = maths.mod i grid.height;
-      y = i / grid.height;
+      x = maths.mod i grid.width;
+      y = i / grid.width;
       elem = elemAt grid x y;
     in
       f elem x y;
