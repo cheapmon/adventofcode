@@ -40,4 +40,11 @@ in rec {
   };
 
   count = pred: grid: lib.count pred grid.list;
+
+  put = elem: x: y: grid:
+    imap0 (e: i: j:
+      if i == x && j == y
+      then elem
+      else e)
+    grid;
 }
