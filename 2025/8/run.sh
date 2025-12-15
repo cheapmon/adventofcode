@@ -1,2 +1,3 @@
 ansible-vault decrypt ./input.txt.enc --output ./input.txt
-nix eval --pretty --file default.nix
+# nix eval --pretty --file default.nix
+ruby default.rb
